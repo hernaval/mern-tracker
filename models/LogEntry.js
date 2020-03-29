@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 
-const {Schema} = mongoose
+const Schema = mongoose.Schema
 
 
 const requireString = {
@@ -10,7 +10,7 @@ const requireString = {
 
 
 const requireNumber = {
-    type : String,
+    type : Number,
     required : true
 }
 
@@ -19,16 +19,10 @@ const logEntrySchema = new Schema({
     description : String,
     comments : String,
     image : String,
-    latitude : {
+    latitude :
         requireNumber,
-        min : -90,
-        max : 90
-    },
-    longitude : {
+    longitude : 
         requireNumber,
-        min : -180,
-        max : 180
-    },
     visitDate : {
         type : Date,
         required : true,
